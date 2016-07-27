@@ -4,6 +4,6 @@
              xmlns:local="clr-namespace:Flow_IDE"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+
     </Application.Resources>
 </Application>

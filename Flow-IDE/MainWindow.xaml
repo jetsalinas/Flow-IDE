@@ -5,12 +5,65 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Flow_IDE"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="Flow Pre-Alpha v 0.1" Height="720" Width="1280">
+
+    <Window.Resources>
+        <!--Definition of OverheadMenuStyle-->
+        <Style x:Key="OverheadMenuItemStyle" TargetType="StackPanel">
+            <Setter Property="Background" Value="#FF1A191A"/>
+        </Style>
+
+        <!--Definition of OverheadMenuStyle-->
+        <Style x:Key="FlowMenuStyle" TargetType="Menu">
+            <Setter Property="Background" Value="#00000000"/>
+            <Setter Property="Margin" Value="10,3,45.676,3"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+        </Style>
+
+        <!--Definition of FlowMenuItemStyle-->
+        <Style x:Key="FlowMenuItemStyle" TargetType="MenuItem">
+            <Setter Property="Foreground" Value="#FFFFFF" />
+            <Setter Property="Background" Value="#FF1A191A"/>
+            <Setter Property="FontFamily" Value="Helvetica BQ" />
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="Margin" Value="3" />
+        </Style>
+        
+        <!--Definition of ToolBarPanelStyle-->
+        <Style x:Key="ToolBarPanelStyle" TargetType="StackPanel">
+            <Setter Property="Height" Value="20"/>
+        </Style>
+        
+        <!--Definition of NavigationBarPanelStyle-->
+        <Style x:Key="NavigationBarPanelStyle" TargetType="StackPanel">
+            <Setter Property="Height" Value="20"/> 
+        </Style>
+    </Window.Resources>
 
     <DockPanel x:Name="MainDockPanel" LastChildFill="True">
         <StackPanel x:Name="LeftStackPanel" DockPanel.Dock="Left"/>
         <StackPanel x:Name="RightStackPanel" DockPanel.Dock="Right"/>
-        <StackPanel x:Name="TopStackPanel" DockPanel.Dock="Top"/>
+        <StackPanel x:Name="TopStackPanel" DockPanel.Dock="Top" Style="{StaticResource OverheadMenuItemStyle}">
+            <Canvas Height="10"/>
+            <Menu x:Name="OverheadMenu" d:LayoutOverrides="Width" Style="{StaticResource FlowMenuStyle}">
+                <MenuItem Header="File" Style="{StaticResource FlowMenuItemStyle}">
+                    <MenuItem x:Name="Open" Header="Open" Style="{StaticResource FlowMenuItemStyle}"/>
+                </MenuItem>
+                <MenuItem Header="Edit" Style="{StaticResource FlowMenuItemStyle}"/>
+                <MenuItem Header="View" Style="{StaticResource FlowMenuItemStyle}"/>
+                <MenuItem Header="Code" Style="{StaticResource FlowMenuItemStyle}"/>
+                <MenuItem Header="Analyze" Style="{StaticResource FlowMenuItemStyle}"/>
+                <MenuItem Header="Refactor" Style="{StaticResource FlowMenuItemStyle}"/>
+                <MenuItem Header="Build" Style="{StaticResource FlowMenuItemStyle}"/>
+                <MenuItem Header="Run" Style="{StaticResource FlowMenuItemStyle}"/>
+                <MenuItem Header="Tools" Style="{StaticResource FlowMenuItemStyle}"/>
+                <MenuItem Header="Window" Style="{StaticResource FlowMenuItemStyle}"/>
+                <MenuItem Header="Help" Style="{StaticResource FlowMenuItemStyle}"/>
+            </Menu>
+            <StackPanel x:Name="ToolBarPanel" Style="{StaticResource ToolBarPanelStyle}"/>
+            <StackPanel x:Name="NavigationBarPanel" Style="{StaticResource NavigationBarPanelStyle}"/>
+        </StackPanel>
         <StackPanel x:Name="BottomStackPanel" DockPanel.Dock="Bottom"/>
+        <TabPanel x:Name="ProjectsTabPanel"/>
     </DockPanel>
 </Window>
