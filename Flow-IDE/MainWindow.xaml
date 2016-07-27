@@ -6,7 +6,11 @@
         xmlns:local="clr-namespace:Flow_IDE"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
-    </Grid>
+
+    <DockPanel x:Name="MainDockPanel" LastChildFill="True">
+        <StackPanel x:Name="LeftStackPanel" DockPanel.Dock="Left"/>
+        <StackPanel x:Name="RightStackPanel" DockPanel.Dock="Right"/>
+        <StackPanel x:Name="TopStackPanel" DockPanel.Dock="Top"/>
+        <StackPanel x:Name="BottomStackPanel" DockPanel.Dock="Bottom"/>
+    </DockPanel>
 </Window>
