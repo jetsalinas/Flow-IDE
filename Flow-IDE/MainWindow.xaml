@@ -4,19 +4,29 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Flow_IDE"
-        mc:Ignorable="d"
+        mc:Ignorable="d"        
+        ShowInTaskbar="True"
         Title="Flow Pre-Alpha v 0.1" Height="720" Width="1280">
 
     <Window.Resources>
+
+        <!--AllowsTransparency="True" Background="Transparent"  WindowStyle="None"-->
+        
+        <!--
+        **********************************
+        Definition of Overhead Menu Styles
+        **********************************
+        -->
+
         <!--Definition of OverheadMenuStyle-->
         <Style x:Key="OverheadMenuItemStyle" TargetType="StackPanel">
             <Setter Property="Background" Value="#FF1A191A"/>
         </Style>
 
-        <!--Definition of OverheadMenuStyle-->
+        <!--Definition of FlowMenuStyle-->
         <Style x:Key="FlowMenuStyle" TargetType="Menu">
             <Setter Property="Background" Value="#00000000"/>
-            <Setter Property="Margin" Value="10,3,45.676,3"/>
+            <Setter Property="Padding" Value="10,3,45.676,3"/>
             <Setter Property="HorizontalAlignment" Value="Stretch"/>
         </Style>
 
@@ -25,27 +35,46 @@
             <Setter Property="Foreground" Value="#FFFFFF" />
             <Setter Property="Background" Value="#FF1A191A"/>
             <Setter Property="FontFamily" Value="Helvetica BQ" />
-            <Setter Property="FontSize" Value="16" />
-            <Setter Property="Margin" Value="3" />
+            <Setter Property="FontWeight" Value="Light"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="Margin" Value="3,3,10,3" />
         </Style>
-        
+
         <!--Definition of ToolBarPanelStyle-->
         <Style x:Key="ToolBarPanelStyle" TargetType="StackPanel">
             <Setter Property="Height" Value="20"/>
         </Style>
-        
+
         <!--Definition of NavigationBarPanelStyle-->
         <Style x:Key="NavigationBarPanelStyle" TargetType="StackPanel">
-            <Setter Property="Height" Value="20"/> 
+            <Setter Property="Height" Value="20"/>
         </Style>
+
+        <!--
+        ************************************
+        Definition of Project TabPane Styles
+        ************************************
+        -->
+
+        <Style x:Key="ProjectTabControlStyle" TargetType="TabControl">
+            <Setter Property="Background" Value="#1A191A"/>
+            <Setter Property="BorderBrush" Value="#00000000"/>
+        </Style>
+
+        <Style x:Key="ProjectTabItemStyle" TargetType="TabItem">
+            <Setter Property="Background" Value="#1A191A"/>
+        </Style>
+
     </Window.Resources>
 
     <DockPanel x:Name="MainDockPanel" LastChildFill="True">
         <StackPanel x:Name="LeftStackPanel" DockPanel.Dock="Left"/>
+
         <StackPanel x:Name="RightStackPanel" DockPanel.Dock="Right"/>
+
         <StackPanel x:Name="TopStackPanel" DockPanel.Dock="Top" Style="{StaticResource OverheadMenuItemStyle}">
             <Canvas Height="10"/>
-            <Menu x:Name="OverheadMenu" d:LayoutOverrides="Width" Style="{StaticResource FlowMenuStyle}">
+            <Menu x:Name="OverheadMenu" d:LayoutOverrides="Width" IsMainMenu="True" Style="{StaticResource FlowMenuStyle}">
                 <MenuItem Header="File" Style="{StaticResource FlowMenuItemStyle}">
                     <MenuItem x:Name="Open" Header="Open" Style="{StaticResource FlowMenuItemStyle}"/>
                 </MenuItem>
@@ -63,7 +92,29 @@
             <StackPanel x:Name="ToolBarPanel" Style="{StaticResource ToolBarPanelStyle}"/>
             <StackPanel x:Name="NavigationBarPanel" Style="{StaticResource NavigationBarPanelStyle}"/>
         </StackPanel>
+
         <StackPanel x:Name="BottomStackPanel" DockPanel.Dock="Bottom"/>
-        <TabPanel x:Name="ProjectsTabPanel"/>
+
+        <TabControl x:Name="ProjectTabControl" Style="{StaticResource ProjectTabControlStyle}" Template="{DynamicResource FlowTabControl}" BorderBrush="#00ACACAC">
+            <TabItem Header="TabItem">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+            <TabItem Header="TabItem">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+            <TabItem Header="TabItem">
+                <Grid Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="106*"/>
+                        <ColumnDefinition Width="211*"/>
+                    </Grid.ColumnDefinitions>
+                </Grid>
+            </TabItem>
+            <TabItem Header="TabItem">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+        </TabControl>
+
+
     </DockPanel>
 </Window>
