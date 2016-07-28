@@ -96,13 +96,13 @@
         <StackPanel x:Name="BottomStackPanel" DockPanel.Dock="Bottom"/>
 
         <TabControl x:Name="ProjectTabControl" Style="{StaticResource ProjectTabControlStyle}" Template="{DynamicResource FlowTabControl}" BorderBrush="#00ACACAC">
-            <TabItem Header="TabItem" Style="{DynamicResource FlowTabItem}">
+            <TabItem Header="Werewolf.java" Style="{DynamicResource FlowTabItem}">
                 <Grid Background="#FFE5E5E5"/>
             </TabItem>
-            <TabItem Header="TabItem" Style="{DynamicResource FlowTabItem}">
+            <TabItem Header="MainMenuController.java" Style="{DynamicResource FlowTabItem}">
                 <Grid Background="#FFE5E5E5"/>
             </TabItem>
-            <TabItem Header="TabItem" Style="{DynamicResource FlowTabItem}">
+            <TabItem Header="Player.java" Style="{DynamicResource FlowTabItem}">
                 <Grid Background="#FFE5E5E5">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="106*"/>
@@ -110,7 +110,7 @@
                     </Grid.ColumnDefinitions>
                 </Grid>
             </TabItem>
-            <TabItem Header="TabItem" Style="{DynamicResource FlowTabItem}">
+            <TabItem Header="ClientListener.java" Style="{DynamicResource FlowTabItem}">
                 <Grid Background="#FFE5E5E5"/>
             </TabItem>
         </TabControl>

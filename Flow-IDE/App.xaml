@@ -7,6 +7,16 @@
 
         <!--Definition for FlowTabControl Template-->
         <ControlTemplate x:Key="FlowTabControl" TargetType="{x:Type TabControl}">
+            <ControlTemplate.Resources>
+                <Style x:Key="FlowTabControl.TabPanel.Style" TargetType="TabPanel">
+                    <Setter Property="Background" Value="#1A191A"/>
+                    <Setter Property="Margin" Value="0,0,0,0"/>
+                </Style>
+                <Style x:Key="FlowTabControl.Border.Style" TargetType="Border">
+                    <Setter Property="BorderThickness" Value="0"/>
+                </Style>
+            </ControlTemplate.Resources>
+            
             <Grid x:Name="templateRoot" ClipToBounds="True" SnapsToDevicePixels="True" KeyboardNavigation.TabNavigation="Local">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition x:Name="ColumnDefinition0"/>
@@ -16,8 +26,8 @@
                     <RowDefinition x:Name="RowDefinition0" Height="Auto"/>
                     <RowDefinition x:Name="RowDefinition1" Height="*"/>
                 </Grid.RowDefinitions>
-                <TabPanel x:Name="HeaderPanel" Background="#1A191A" Grid.Column="0" IsItemsHost="True" Margin="2,2,2,0" Grid.Row="0" KeyboardNavigation.TabIndex="1" Panel.ZIndex="1"/>
-                <Border x:Name="ContentPanel" Grid.Column="0" KeyboardNavigation.DirectionalNavigation="Contained" Grid.Row="1" KeyboardNavigation.TabIndex="2" KeyboardNavigation.TabNavigation="Local">
+                <TabPanel x:Name="HeaderPanel"  Style="{StaticResource FlowTabControl.TabPanel.Style}" Grid.Column="0" IsItemsHost="True" Grid.Row="0" KeyboardNavigation.TabIndex="1" Panel.ZIndex="1"/>
+                <Border x:Name="ContentPanel" Style="{StaticResource FlowTabControl.Border.Style}" Grid.Column="0" KeyboardNavigation.DirectionalNavigation="Contained" Grid.Row="1" KeyboardNavigation.TabIndex="2" KeyboardNavigation.TabNavigation="Local">
                     <ContentPresenter x:Name="PART_SelectedContentHost" ContentTemplate="{TemplateBinding SelectedContentTemplate}" Content="{TemplateBinding SelectedContent}" ContentStringFormat="{TemplateBinding SelectedContentStringFormat}" ContentSource="SelectedContent" Margin="{TemplateBinding Padding}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
                 </Border>
             </Grid>
@@ -68,13 +78,11 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        <!--Resource definitions begin here for FlowTabItem-->
         <SolidColorBrush x:Key="TabItem.Static.Background" Color="#3A3A3A"/>
         <SolidColorBrush x:Key="TabItem.Static.Border" Color="#ACACAC"/>
-        <LinearGradientBrush x:Key="TabItem.MouseOver.Background" EndPoint="0,1" StartPoint="0,0">
-            <GradientStop Color="#ECF4FC" Offset="0.0"/>
-            <GradientStop Color="#DCECFC" Offset="1.0"/>
-        </LinearGradientBrush>
-        <SolidColorBrush x:Key="TabItem.MouseOver.Border" Color="#7EB4EA"/>
+        <SolidColorBrush x:Key="TabItem.MouseOver.Background" Color="#444444"/>
+        <SolidColorBrush x:Key="TabItem.MouseOver.Border" Color="#0C0C0C"/>
         <SolidColorBrush x:Key="TabItem.Disabled.Background" Color="#F0F0F0"/>
         <SolidColorBrush x:Key="TabItem.Disabled.Border" Color="#D9D9D9"/>
         <SolidColorBrush x:Key="TabItem.Selected.Border" Color="#04809D"/>
@@ -85,12 +93,13 @@
             <Setter Property="Background" Value="{StaticResource TabItem.Static.Background}"/>
             <Setter Property="BorderBrush" Value="{StaticResource TabItem.Static.Border}"/>
             <Setter Property="Margin" Value="0"/>
-            <Setter Property="Padding" Value="10,5"/>
+            <Setter Property="Padding" Value="5,5"/>
             <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
             <Setter Property="VerticalContentAlignment" Value="Stretch"/>
-            <Setter Property="FontFamily" Value="Now"/>
+            <Setter Property="FontFamily" Value="Segoe UI"/>
             <Setter Property="FontWeight" Value="Light"/>
-            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="FontSize" Value="11"/>
+        <!--Resource definition end here for FlowTabItem-->
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type TabItem}">
