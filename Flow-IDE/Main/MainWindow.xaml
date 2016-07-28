@@ -30,16 +30,6 @@
             <Setter Property="HorizontalAlignment" Value="Stretch"/>
         </Style>
 
-        <!--Definition of FlowMenuItemStyle-->
-        <Style x:Key="FlowMenuItemStyle" TargetType="MenuItem">
-            <Setter Property="Foreground" Value="#FFFFFF" />
-            <Setter Property="Background" Value="#FF1A191A"/>
-            <Setter Property="FontFamily" Value="Helvetica BQ" />
-            <Setter Property="FontWeight" Value="Light"/>
-            <Setter Property="FontSize" Value="16"/>
-            <Setter Property="Margin" Value="3,3,10,3" />
-        </Style>
-
         <!--Definition of ToolBarPanelStyle-->
         <Style x:Key="ToolBarPanelStyle" TargetType="StackPanel">
             <Setter Property="Height" Value="20"/>
@@ -76,7 +66,7 @@
             <Canvas Height="10"/>
             <Menu x:Name="OverheadMenu" d:LayoutOverrides="Width" IsMainMenu="True" Style="{StaticResource FlowMenuStyle}">
                 <MenuItem Header="File" Style="{StaticResource FlowMenuItemStyle}">
-                    <MenuItem x:Name="Open" Header="Open" Style="{StaticResource FlowMenuItemStyle}"/>
+                    <MenuItem Header="MenuItem" Height="100" Margin="0" Style="{DynamicResource FlowMenuItemStyle}" Width="100"/>
                 </MenuItem>
                 <MenuItem Header="Edit" Style="{StaticResource FlowMenuItemStyle}"/>
                 <MenuItem Header="View" Style="{StaticResource FlowMenuItemStyle}"/>
