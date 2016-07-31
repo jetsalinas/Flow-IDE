@@ -13,49 +13,6 @@
 
         <!--AllowsTransparency="True" Background="Transparent"  WindowStyle="None"-->
 
-        <!--
-        **********************************
-        Definition of Overhead Menu Styles
-        **********************************
-        -->
-
-        <!--Definition of OverheadMenuStyle-->
-        <Style x:Key="OverheadMenuItemStyle" TargetType="{x:Type StackPanel}">
-            <Setter Property="Background" Value="#FF1A191A"/>
-        </Style>
-
-        <!--Definition of FlowMenuStyle-->
-        <Style x:Key="FlowMenuStyle" TargetType="{x:Type Menu}">
-            <Setter Property="Background" Value="#00000000"/>
-            <Setter Property="Padding" Value="10,3,45.676,3"/>
-            <Setter Property="HorizontalAlignment" Value="Stretch"/>
-        </Style>
-
-        <!--Definition of ToolBarPanelStyle-->
-        <Style x:Key="ToolBarPanelStyle" TargetType="{x:Type StackPanel}">
-            <Setter Property="Height" Value="20"/>
-        </Style>
-
-        <!--Definition of NavigationBarPanelStyle-->
-        <Style x:Key="NavigationBarPanelStyle" TargetType="{x:Type StackPanel}">
-            <Setter Property="Height" Value="20"/>
-        </Style>
-
-        <!--
-        ************************************
-        Definition of Project TabPane Styles
-        ************************************
-        -->
-
-        <Style x:Key="ProjectTabControlStyle" TargetType="{x:Type TabControl}">
-            <Setter Property="Background" Value="#1A191A"/>
-            <Setter Property="BorderBrush" Value="#00000000"/>
-        </Style>
-
-        <Style x:Key="ProjectTabItemStyle" TargetType="{x:Type TabItem}">
-            <Setter Property="Background" Value="#1A191A"/>
-        </Style>
-
     </Window.Resources>
 
     <DockPanel x:Name="MainDockPanel" LastChildFill="True">

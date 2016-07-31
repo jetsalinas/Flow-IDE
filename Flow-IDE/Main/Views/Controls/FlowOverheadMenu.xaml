@@ -1,0 +1,31 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:Flow_IDE.Main.Views.Controls">
+    <!--
+        **********************************
+        Definition of Overhead Menu Styles
+        **********************************
+        -->
+
+    <!--Definition of OverheadMenuStyle-->
+    <Style x:Key="OverheadMenuItemStyle" TargetType="{x:Type StackPanel}">
+        <Setter Property="Background" Value="#FF1A191A"/>
+    </Style>
+
+    <!--Definition of FlowMenuStyle-->
+    <Style x:Key="FlowMenuStyle" TargetType="{x:Type Menu}">
+        <Setter Property="Background" Value="#00000000"/>
+        <Setter Property="Padding" Value="10,3,45.676,3"/>
+        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+    </Style>
+
+    <!--Definition of ToolBarPanelStyle-->
+    <Style x:Key="ToolBarPanelStyle" TargetType="{x:Type StackPanel}">
+        <Setter Property="Height" Value="20"/>
+    </Style>
+
+    <!--Definition of NavigationBarPanelStyle-->
+    <Style x:Key="NavigationBarPanelStyle" TargetType="{x:Type StackPanel}">
+        <Setter Property="Height" Value="20"/>
+    </Style>
+</ResourceDictionary>
