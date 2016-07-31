@@ -86,23 +86,10 @@
         <StackPanel x:Name="BottomStackPanel" DockPanel.Dock="Bottom"/>
 
         <TabControl x:Name="ProjectTabControl" Style="{StaticResource ProjectTabControlStyle}" Template="{DynamicResource FlowTabControl}" BorderBrush="#00ACACAC">
-            <TabItem Header="Werewolf.java" Style="{DynamicResource FlowTabItem}">
-                <Grid Background="#FFE5E5E5" Margin="-48,-6.4,48,6.4"/>
-            </TabItem>
-            <TabItem Header="MainMenuController.java" Style="{DynamicResource FlowTabItem}" IsSelected="True">
-                <Grid Background="#FFE5E5E5"/>
-            </TabItem>
-            <TabItem Header="Player.java" Style="{DynamicResource FlowTabItem}">
-                <Grid Background="#FFE5E5E5">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="106*"/>
-                        <ColumnDefinition Width="211*"/>
-                    </Grid.ColumnDefinitions>
-                </Grid>
-            </TabItem>
-            <TabItem Header="ClientListener.java" Style="{DynamicResource FlowTabItem}">
-                <Grid Background="#FFE5E5E5"/>
-            </TabItem>
+            <TabItem Header="Werewolf.java" Style="{DynamicResource FlowTabItem}"/>
+            <TabItem Header="MainMenuController.java" Style="{DynamicResource FlowTabItem}" IsSelected="True"/>
+            <TabItem Header="Player.java" Style="{DynamicResource FlowTabItem}"/>
+            <TabItem Header="ClientListener.java" Style="{DynamicResource FlowTabItem}"/>
         </TabControl>
 
 
