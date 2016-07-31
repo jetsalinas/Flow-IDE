@@ -1,0 +1,99 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Flow_IDE"
+        xmlns:Controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Layout.Toolkit" x:Class="Flow_IDE.MainWindow"
+        mc:Ignorable="d"        
+        ShowInTaskbar="True"
+        Title="Flow Pre-Alpha v 0.1" Height="720" Width="1280">
+
+    <Window.Resources>
+
+        <!--AllowsTransparency="True" Background="Transparent"  WindowStyle="None"-->
+
+        <!--
+        **********************************
+        Definition of Overhead Menu Styles
+        **********************************
+        -->
+
+        <!--Definition of OverheadMenuStyle-->
+        <Style x:Key="OverheadMenuItemStyle" TargetType="{x:Type StackPanel}">
+            <Setter Property="Background" Value="#FF1A191A"/>
+        </Style>
+
+        <!--Definition of FlowMenuStyle-->
+        <Style x:Key="FlowMenuStyle" TargetType="{x:Type Menu}">
+            <Setter Property="Background" Value="#00000000"/>
+            <Setter Property="Padding" Value="10,3,45.676,3"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+        </Style>
+
+        <!--Definition of ToolBarPanelStyle-->
+        <Style x:Key="ToolBarPanelStyle" TargetType="{x:Type StackPanel}">
+            <Setter Property="Height" Value="20"/>
+        </Style>
+
+        <!--Definition of NavigationBarPanelStyle-->
+        <Style x:Key="NavigationBarPanelStyle" TargetType="{x:Type StackPanel}">
+            <Setter Property="Height" Value="20"/>
+        </Style>
+
+        <!--
+        ************************************
+        Definition of Project TabPane Styles
+        ************************************
+        -->
+
+        <Style x:Key="ProjectTabControlStyle" TargetType="{x:Type TabControl}">
+            <Setter Property="Background" Value="#1A191A"/>
+            <Setter Property="BorderBrush" Value="#00000000"/>
+        </Style>
+
+        <Style x:Key="ProjectTabItemStyle" TargetType="{x:Type TabItem}">
+            <Setter Property="Background" Value="#1A191A"/>
+        </Style>
+
+    </Window.Resources>
+
+    <DockPanel x:Name="MainDockPanel" LastChildFill="True">
+
+        <StackPanel x:Name="TopStackPanel" DockPanel.Dock="Top" Style="{StaticResource OverheadMenuItemStyle}">
+            <Canvas Height="10"/>
+            <Menu x:Name="OverheadMenu" d:LayoutOverrides="Width" IsMainMenu="True" Style="{StaticResource FlowMenuStyle}">
+                <MenuItem Header="File" Style="{StaticResource FlowMenuItemStyle}">
+                    <MenuItem Header="MenuItem" Height="100" Margin="0" Style="{DynamicResource FlowMenuItemStyle}" Width="100"/>
+                </MenuItem>
+                <MenuItem Header="Edit" Style="{StaticResource FlowMenuItemStyle}"/>
+                <MenuItem Header="View" Style="{StaticResource FlowMenuItemStyle}"/>
+                <MenuItem Header="Code" Style="{StaticResource FlowMenuItemStyle}"/>
+                <MenuItem Header="Analyze" Style="{StaticResource FlowMenuItemStyle}"/>
+                <MenuItem Header="Refactor" Style="{StaticResource FlowMenuItemStyle}"/>
+                <MenuItem Header="Build" Style="{StaticResource FlowMenuItemStyle}"/>
+                <MenuItem Header="Run" Style="{StaticResource FlowMenuItemStyle}"/>
+                <MenuItem Header="Tools" Style="{StaticResource FlowMenuItemStyle}"/>
+                <MenuItem Header="Window" Style="{StaticResource FlowMenuItemStyle}"/>
+                <MenuItem Header="Help" Style="{StaticResource FlowMenuItemStyle}"/>
+            </Menu>
+            <StackPanel x:Name="ToolBarPanel" Style="{StaticResource ToolBarPanelStyle}"/>
+            <StackPanel x:Name="NavigationBarPanel" Style="{StaticResource NavigationBarPanelStyle}"/>
+        </StackPanel>
+
+        <StackPanel x:Name="LeftStackPanel" DockPanel.Dock="Left" Orientation="Horizontal">
+            <StackPanel x:Name="LeftSubPanel"/>
+        </StackPanel>
+        <StackPanel x:Name="RightStackPanel" DockPanel.Dock="Right" Orientation="Horizontal"/>
+
+        <StackPanel x:Name="BottomStackPanel" DockPanel.Dock="Bottom"/>
+
+        <TabControl x:Name="ProjectTabControl" Style="{StaticResource ProjectTabControlStyle}" Template="{DynamicResource FlowTabControl}" BorderBrush="#00ACACAC">
+            <TabItem Header="Werewolf.java" Style="{DynamicResource FlowTabItem}"/>
+            <TabItem Header="MainMenuController.java" Style="{DynamicResource FlowTabItem}" IsSelected="True"/>
+            <TabItem Header="Player.java" Style="{DynamicResource FlowTabItem}"/>
+            <TabItem Header="ClientListener.java" Style="{DynamicResource FlowTabItem}"/>
+        </TabControl>
+
+    </DockPanel>
+</Window>
